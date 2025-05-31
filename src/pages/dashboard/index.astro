@@ -1,0 +1,35 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+
+const services = [
+  { name: "Web Development", status: "In Progress", invoice: "#1234", deliverable: "project.zip" },
+  { name: "AI Integration", status: "Completed", invoice: "#1235", deliverable: "ai-bot.zip" },
+];
+---
+<PageLayout>
+  <section class="max-w-3xl mx-auto py-16">
+    <h1 class="text-3xl font-bold mb-6">Client Dashboard</h1>
+    <table class="w-full table-auto border">
+      <thead>
+        <tr>
+          <th class="p-2 border">Service</th>
+          <th class="p-2 border">Status</th>
+          <th class="p-2 border">Invoice</th>
+          <th class="p-2 border">Deliverable</th>
+        </tr>
+      </thead>
+      <tbody>
+        {services.map(s => (
+          <tr>
+            <td class="p-2 border">{s.name}</td>
+            <td class="p-2 border">{s.status}</td>
+            <td class="p-2 border">{s.invoice}</td>
+            <td class="p-2 border">
+              {s.status === "Completed" ? <a href={`/${s.deliverable}`} class="text-blue-600 underline">Download</a> : "-"}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+</PageLayout>

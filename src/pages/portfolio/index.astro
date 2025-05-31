@@ -1,0 +1,28 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const projects = [
+  { title: "E-commerce Platform", description: "React, Stripe, Node.js. A scalable online store for modern businesses.", icon: "tabler:shopping-cart", link: "/portfolio/ecommerce-platform" },
+  { title: "AI Chatbot", description: "Python, OpenAI, FastAPI. An intelligent assistant for customer support.", icon: "tabler:message", link: "/portfolio/ai-chatbot" },
+  { title: "Portfolio Site", description: "Astro, Tailwind, Vercel. A fast, SEO-friendly personal website.", icon: "tabler:world", link: "/portfolio/portfolio-site" },
+  { title: "WordPress Plugin", description: "PHP, WordPress. Custom plugin for advanced SEO.", icon: "tabler:plug", link: "/portfolio/wp-plugin" },
+];
+
+const techFilters = ["All", "React", "WordPress", "AI", "Web App", "E-commerce", "Plugin"];
+---
+
+<PageLayout>
+  <Content
+    title="Portfolio"
+    subtitle="Showcase of my work"
+    items={projects}
+  />
+
+  <!-- Simple filter UI (static for now) -->
+  <div class="flex flex-wrap gap-2 my-6">
+    {techFilters.map((tech) => (
+      <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm cursor-pointer">{tech}</span>
+    ))}
+  </div>
+</PageLayout>
