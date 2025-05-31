@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Tech Stack - Jitender Kumar',
+  description: 'Explore the technologies and tools I use for web development, AI integration, and digital solutions.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title="My Tech Stack"
+    subtitle="Discover the powerful technologies and tools I use to build modern, scalable, and efficient solutions."
+  />
+
+  <Features2
+    title="Frontend Technologies"
+    subtitle="Modern frameworks and libraries for building responsive and interactive user interfaces"
+    columns={3}
+    items={[
+      {
+        title: 'React.js',
+        description: 'Building interactive user interfaces with the most popular frontend library',
+        icon: 'tabler:brand-react',
+      },
+      {
+        title: 'Next.js',
+        description: 'Server-side rendering and static site generation for React applications',
+        icon: 'tabler:brand-nextjs',
+      },
+      {
+        title: 'TypeScript',
+        description: 'Adding type safety and enhanced developer experience to JavaScript',
+        icon: 'tabler:brand-typescript',
+      },
+      {
+        title: 'Tailwind CSS',
+        description: 'Utility-first CSS framework for rapid UI development',
+        icon: 'tabler:brand-tailwind',
+      },
+    ]}
+  />
+
+  <Features2
+    title="Backend Technologies"
+    subtitle="Robust and scalable server-side technologies for building powerful applications"
+    columns={3}
+    items={[
+      {
+        title: 'Node.js',
+        description: 'Server-side JavaScript runtime for building scalable network applications',
+        icon: 'tabler:brand-nodejs',
+      },
+      {
+        title: 'Express.js',
+        description: 'Fast, unopinionated web framework for Node.js',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'MongoDB',
+        description: 'NoSQL database for modern applications',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'PostgreSQL',
+        description: 'Powerful, open-source object-relational database system',
+        icon: 'tabler:database-export',
+      },
+    ]}
+  />
+
+  <Features2
+    title="DevOps & Tools"
+    subtitle="Essential tools and practices for efficient development and deployment"
+    columns={3}
+    items={[
+      {
+        title: 'Git',
+        description: 'Version control system for tracking changes and collaborating',
+        icon: 'tabler:brand-git',
+      },
+      {
+        title: 'Docker',
+        description: 'Containerization platform for consistent development and deployment',
+        icon: 'tabler:brand-docker',
+      },
+      {
+        title: 'AWS',
+        description: 'Cloud computing services for scalable infrastructure',
+        icon: 'tabler:brand-aws',
+      },
+      {
+        title: 'GitHub Actions',
+        description: 'Automation and CI/CD workflows for software development',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+
+  <Content
+    title="AI & Machine Learning"
+    subtitle="Integrating artificial intelligence and machine learning solutions"
+    items={[
+      {
+        title: 'TensorFlow',
+        description: 'Open-source library for machine learning and artificial intelligence',
+      },
+      {
+        title: 'OpenAI API',
+        description: 'Integration of advanced language models and AI capabilities',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3',
+      alt: 'AI Development',
+    }}
+  />
+</Layout>

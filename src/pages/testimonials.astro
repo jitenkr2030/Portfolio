@@ -1,0 +1,93 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Testimonials - Jitender Kumar',
+  description: 'Read what clients say about working with me and their experience with my web development and digital solutions.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title="Client Testimonials"
+    subtitle="Discover what clients say about their experience working with me and the results we've achieved together."
+  />
+
+  <Testimonials
+    title="Featured Testimonials"
+    subtitle="Here's what some of my clients have to say about their experience working with me."
+    testimonials={[
+      {
+        testimonial: `Working with Jitender was a game-changer for our business. His expertise in web development and AI integration helped us create a powerful online platform that exceeded our expectations.`,
+        name: 'Michael Chen',
+        job: 'CEO, TechStart Solutions',
+        image: {
+          src: 'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3',
+          alt: 'Michael Chen',
+        },
+      },
+      {
+        testimonial: `Jitender's attention to detail and technical expertise made our e-commerce project a success. He delivered a user-friendly, scalable solution that has significantly improved our online sales.`,
+        name: 'Sarah Johnson',
+        job: 'E-commerce Director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixlib=rb-4.0.3',
+          alt: 'Sarah Johnson',
+        },
+      },
+      {
+        testimonial: `The AI integration solutions provided by Jitender have transformed our customer service operations. His innovative approach and technical skills are truly impressive.`,
+        name: 'David Martinez',
+        job: 'CTO, AI Innovations',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3',
+          alt: 'David Martinez',
+        },
+      },
+    ]}
+  />
+
+  <Testimonials
+    title="Client Success Stories"
+    subtitle="More experiences from clients across different industries"
+    testimonials={[
+      {
+        testimonial: `The WordPress solutions developed by Jitender are both beautiful and functional. His understanding of our needs and ability to deliver custom solutions made the project a success.`,
+        name: 'Emily Rodriguez',
+        job: 'Marketing Manager',
+        image: {
+          src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3',
+          alt: 'Emily Rodriguez',
+        },
+      },
+      {
+        testimonial: `Jitender's expertise in React and Node.js helped us create a robust web application that has significantly improved our business operations.`,
+        name: 'James Wilson',
+        job: 'Product Owner',
+        image: {
+          src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3',
+          alt: 'James Wilson',
+        },
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready to start your project?"
+    subtitle="Let's discuss how I can help bring your ideas to life with modern web development solutions."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/contact',
+      },
+      {
+        text: 'Learn More',
+        href: '/services',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,82 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'Portfolio - Jitender Kumar',
+  description: 'Explore my latest projects and professional work in web development, AI integration, and digital solutions.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title="My Portfolio"
+    subtitle="Explore my latest projects and professional work in web development, AI integration, and digital solutions."
+  />
+
+  <Content
+    isReversed
+    title="Featured Projects"
+    items={[
+      {
+        title: 'E-commerce Platform',
+        description: 'A full-featured online store built with Next.js, featuring real-time inventory management and secure payment processing.',
+      },
+      {
+        title: 'AI-Powered Chat Application',
+        description: 'An intelligent chatbot system integrated with OpenAI API, providing automated customer support and personalized interactions.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3',
+      alt: 'E-commerce Project Screenshot',
+    }}
+  />
+
+  <Features2
+    title="Project Categories"
+    subtitle="Browse through different types of projects"
+    items={[
+      {
+        title: 'Web Applications',
+        description: 'Custom web solutions built with modern frameworks',
+        icon: 'tabler:app-window',
+      },
+      {
+        title: 'AI Solutions',
+        description: 'Intelligent systems and machine learning applications',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'E-commerce',
+        description: 'Online stores and marketplace solutions',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'WordPress',
+        description: 'Custom themes and plugin development',
+        icon: 'tabler:brand-wordpress',
+      },
+    ]}
+  />
+
+  <Content
+    title="Recent Work"
+    items={[
+      {
+        title: 'Healthcare Management System',
+        description: 'A comprehensive platform for managing patient records and appointments, built with React and Node.js.',
+      },
+      {
+        title: 'Real Estate Marketplace',
+        description: 'A property listing platform with advanced search capabilities and virtual tour features.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3',
+      alt: 'Healthcare Project Screenshot',
+    }}
+  />
+</Layout>

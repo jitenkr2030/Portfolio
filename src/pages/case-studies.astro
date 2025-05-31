@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Case Studies - Jitender Kumar',
+  description: 'Detailed analysis of successful projects and client solutions in web development and AI integration.',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    title="Case Studies"
+    subtitle="In-depth analysis of successful projects and transformative solutions"
+  />
+
+  <Content
+    isReversed
+    title="E-commerce Transformation"
+    subtitle="How we helped a traditional retail business go digital"
+    items={[
+      {
+        title: 'Challenge',
+        description: 'A local retail business struggling with declining foot traffic needed to establish an online presence during the pandemic.',
+      },
+      {
+        title: 'Solution',
+        description: 'Implemented a custom e-commerce platform with inventory management, secure payments, and a user-friendly interface.',
+      },
+      {
+        title: 'Results',
+        description: '300% increase in sales within 6 months, expanded customer base across multiple cities, and improved inventory turnover.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3',
+      alt: 'E-commerce Success Story',
+    }}
+  />
+
+  <Features2
+    title="Key Achievements"
+    subtitle="Measurable impacts and improvements"
+    items={[
+      {
+        title: 'Sales Growth',
+        description: '300% increase in revenue',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Customer Base',
+        description: 'Expanded to 5 new cities',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Efficiency',
+        description: '50% reduction in operational costs',
+        icon: 'tabler:chart-pie',
+      },
+    ]}
+  />
+
+  <Content
+    title="AI Integration Success"
+    subtitle="Revolutionizing customer service with AI"
+    items={[
+      {
+        title: 'Challenge',
+        description: 'A growing startup struggling with scaling customer support operations and maintaining response times.',
+      },
+      {
+        title: 'Solution',
+        description: 'Implemented an AI-powered chatbot system integrated with existing support tools and knowledge base.',
+      },
+      {
+        title: 'Results',
+        description: '80% reduction in response time, 24/7 support availability, and improved customer satisfaction scores.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3',
+      alt: 'AI Integration Case Study',
+    }}
+  />
+</Layout>
