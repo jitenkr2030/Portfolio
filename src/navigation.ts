@@ -2,120 +2,54 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
+    // Main
+    { text: 'Home', href: getPermalink('/'), icon: 'tabler:home' },
+    { text: 'About Me', href: getPermalink('/about'), icon: 'tabler:user' },
+    { text: 'Portfolio', href: getPermalink('/portfolio'), icon: 'tabler:briefcase' },
+    { text: 'Services', href: getPermalink('/services'), icon: 'tabler:settings' },
+    { text: 'Contact', href: getPermalink('/contact'), icon: 'tabler:mail' },
+
+    // Client Area Dropdown
     {
-      text: 'Homes',
+      text: 'Client Area',
+      icon: 'tabler:user-circle',
       links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
+        { text: 'Book a Service', href: getPermalink('/book'), icon: 'tabler:calendar-plus' },
+        { text: 'Submit Requirements', href: getPermalink('/requirements'), icon: 'tabler:upload' },
+        { text: 'Payment', href: getPermalink('/payment'), icon: 'tabler:credit-card' },
+        { text: 'Client Dashboard', href: getPermalink('/dashboard'), icon: 'tabler:dashboard' },
       ],
+      divider: true,
     },
+
+    // Admin Dropdown
     {
-      text: 'Pages',
+      text: 'Admin',
+      icon: 'tabler:lock',
       links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
+        { text: 'Admin Panel', href: getPermalink('/admin'), icon: 'tabler:settings-cog' },
       ],
+      divider: true,
     },
+
+    // More Dropdown
     {
-      text: 'Landing',
+      text: 'More',
+      icon: 'tabler:apps',
       links: [
-        {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
+        { text: 'FAQs', href: getPermalink('/faqs'), icon: 'tabler:help' },
+        { text: 'Newsletter', href: getPermalink('/newsletter'), icon: 'tabler:mail-opened' },
+        { text: 'Referral', href: getPermalink('/referral'), icon: 'tabler:users' },
+        { text: 'Case Studies', href: getPermalink('/case-studies/sample-case'), icon: 'tabler:book' },
+        { divider: true },
+        { text: 'Privacy Policy', href: getPermalink('/privacy-policy'), icon: 'tabler:shield-lock' },
+        { text: 'Terms', href: getPermalink('/terms'), icon: 'tabler:file-description' },
       ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
-    {
-      text: 'Widgets',
-      href: '#',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [
+    { text: 'Book a Service', href: getPermalink('/book'), variant: 'primary', icon: 'tabler:calendar-plus' }
+  ],
 };
 
 export const footerData = {
@@ -167,13 +101,12 @@ export const footerData = {
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `

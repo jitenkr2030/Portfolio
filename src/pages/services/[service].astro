@@ -1,0 +1,21 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+const { service } = Astro.params;
+const serviceData = {
+  title: service.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+  description: "Detailed description of the service.",
+  price: "$499",
+  features: ["Feature 1", "Feature 2", "Feature 3"]
+};
+---
+<PageLayout>
+  <section class="max-w-3xl mx-auto py-16">
+    <h1 class="text-4xl font-bold mb-4">{serviceData.title}</h1>
+    <p class="mb-4">{serviceData.description}</p>
+    <div class="mb-4"><strong>Price:</strong> {serviceData.price}</div>
+    <ul class="list-disc ml-6">
+      {serviceData.features.map(f => <li>{f}</li>)}
+    </ul>
+    <a href="/book" class="btn btn-primary mt-6 inline-block">Book Now</a>
+  </section>
+</PageLayout>

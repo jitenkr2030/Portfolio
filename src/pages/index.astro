@@ -1,130 +1,60 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-
+import PageLayout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = {
-  title: 'Jitender Kumar - Full Stack Developer & AI Specialist',
-  ignoreTitleTemplate: true,
-};
+const services = [
+  { title: "Web Development", description: "Modern, fast, and scalable websites.", icon: "tabler:code" },
+  { title: "AI Integration", description: "Add AI features to your business.", icon: "tabler:robot" },
+  { title: "WordPress Plugins", description: "Custom plugins for your needs.", icon: "tabler:plug" },
+  { title: "Hosting Setup", description: "Secure and reliable hosting.", icon: "tabler:server" },
+];
+
+const projects = [
+  { title: "E-commerce Platform", description: "React, Stripe, Node.js", icon: "tabler:shopping-cart" },
+  { title: "AI Chatbot", description: "Python, OpenAI, FastAPI", icon: "tabler:message" },
+  { title: "Portfolio Site", description: "Astro, Tailwind, Vercel", icon: "tabler:world" },
+];
+
+const testimonials = [
+  { name: "Alice", job: "CEO, Example Inc.", testimonial: "Fantastic work and great communication!" },
+  { name: "Bob", job: "CTO, Startup", testimonial: "Delivered on time and exceeded expectations." },
+];
 ---
 
-<Layout metadata={metadata}>
+<PageLayout>
   <Hero
+    title="Jitender Kumar"
+    subtitle="Building modern web experiences. Let’s create something amazing together."
+    tagline="Web Developer • AI Integrator • WordPress Expert"
     actions={[
-      {
-        variant: 'primary',
-        text: 'Book a Service',
-        href: '/book-service',
-        icon: 'tabler:calendar',
-      },
-      { text: 'View Portfolio', href: '#portfolio' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Jitender Kumar Profile' }}
-  >
-    <Fragment slot="title">
-      Transforming Ideas into <span class="text-accent dark:text-white">Digital Reality</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Full Stack Developer specializing in Web Development, AI Integration, and Custom Solutions.
-      Let's build something amazing together.
-    </Fragment>
-  </Hero>
-
-  <Features
-    id="services"
-    tagline="Services"
-    title="What I Offer"
-    subtitle="Comprehensive development solutions tailored to your needs"
-    items={[
-      {
-        title: 'Web Development',
-        description: 'Custom websites and web applications built with modern technologies and best practices.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'AI Integration',
-        description: 'Implement AI solutions to enhance your business processes and user experience.',
-        icon: 'tabler:brain',
-      },
-      {
-        title: 'WordPress Solutions',
-        description: 'Custom WordPress themes, plugins, and complete website development.',
-        icon: 'tabler:brand-wordpress',
-      },
-      {
-        title: 'E-commerce Development',
-        description: 'Build robust online stores with secure payment integration and user-friendly interfaces.',
-        icon: 'tabler:shopping-cart',
-      },
+      { text: "Book a Service", href: "/book", variant: "primary" },
+      { text: "View Portfolio", href: "/portfolio", variant: "secondary" }
     ]}
   />
 
   <Content
-    id="portfolio"
+    title="Welcome!"
+    subtitle="I help businesses and individuals build, launch, and grow their digital presence."
+    content="With years of experience in web development, AI, and WordPress, I deliver solutions that work."
+  />
+
+  <Features3
+    title="Services"
+    subtitle="What I Offer"
+    items={services}
+  />
+
+  <Content
     title="Featured Projects"
-    subtitle="Take a look at some of my recent work"
-    items={[
-      {
-        title: 'Project 1',
-        description: 'Description of the project and technologies used.',
-      },
-      {
-        title: 'Project 2',
-        description: 'Description of another successful project.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3',
-      alt: 'Portfolio Project',
-    }}
+    subtitle="A selection of my best work"
+    items={projects}
   />
 
-  <Stats
-    stats={[
-      { title: 'Projects', amount: '50+' },
-      { title: 'Clients', amount: '30+' },
-      { title: 'Experience', amount: '5+ Years' },
-      { title: 'Technologies', amount: '15+' },
-    ]}
+  <Testimonials
+    title="What Clients Say"
+    testimonials={testimonials}
   />
-
-  <FAQs
-    title="Frequently Asked Questions"
-    items={[
-      {
-        title: 'What is your development process?',
-        description: 'I follow an agile methodology with regular client communication and iterative development.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'How long does a typical project take?',
-        description: 'Project timelines vary based on complexity. Simple websites might take 2-3 weeks, while complex applications can take several months.',
-        icon: 'tabler:chevrons-right',
-      },
-    ]}
-  />
-
-  <CallToAction
-    actions={[{
-      variant: 'primary',
-      text: 'Start Your Project',
-      href: '/book-service',
-      icon: 'tabler:rocket',
-    }]}
-  >
-    <Fragment slot="title">
-      Ready to bring your ideas to life?
-    </Fragment>
-    <Fragment slot="subtitle">
-      Let's collaborate and create something extraordinary together.
-    </Fragment>
-  </CallToAction>
-</Layout>
+</PageLayout>

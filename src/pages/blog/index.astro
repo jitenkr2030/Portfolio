@@ -1,0 +1,21 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import Headline from '~/components/blog/Headline.astro';
+
+const posts = [
+  { title: "How to Build a Portfolio with Astro", subtitle: "Step-by-step guide to a modern portfolio.", slug: "build-portfolio-astro" },
+  { title: "Integrating AI in Web Projects", subtitle: "Practical AI use-cases for developers.", slug: "ai-integration-web" },
+  { title: "WordPress Plugin Development Tips", subtitle: "Best practices for plugin authors.", slug: "wp-plugin-tips" },
+];
+---
+
+<PageLayout>
+  <Headline title="Blog & Insights" subtitle="Knowledge, project breakdowns, and industry tips." />
+
+  <BlogHighlightedPosts posts={posts.slice(0,1)} />
+  <BlogLatestPosts posts={posts} />
+  <Pagination prevUrl={null} nextUrl={"/blog/page/2"} />
+</PageLayout>

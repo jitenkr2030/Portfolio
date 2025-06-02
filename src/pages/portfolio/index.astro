@@ -1,0 +1,52 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const projects = [
+  { 
+    title: "E-commerce Platform",
+    description: "Built a high-performance e-commerce platform using React, Node.js, and Stripe integration. Features include real-time inventory management, secure payment processing, and analytics dashboard.",
+    tech: ["React", "Node.js", "Stripe", "MongoDB"],
+    icon: "tabler:shopping-cart",
+    link: "/portfolio/ecommerce-platform"
+  },
+  {
+    title: "AI-Powered Assistant",
+    description: "Developed an intelligent chatbot using OpenAI's GPT and Python. Integrated with customer support systems to provide 24/7 automated assistance with 95% accuracy.",
+    tech: ["Python", "OpenAI", "FastAPI", "AI"],
+    icon: "tabler:message",
+    link: "/portfolio/ai-chatbot"
+  },
+  {
+    title: "SaaS Dashboard",
+    description: "Created a modern SaaS analytics dashboard using Next.js and D3.js. Real-time data visualization and reporting for business metrics.",
+    tech: ["Next.js", "D3.js", "Web App", "React"],
+    icon: "tabler:chart-bar",
+    link: "/portfolio/saas-dashboard"
+  },
+  {
+    title: "WordPress E-learning Platform",
+    description: "Custom WordPress development for an online learning platform. Features include course management, user progress tracking, and payment integration.",
+    tech: ["WordPress", "PHP", "MySQL", "E-commerce"],
+    icon: "tabler:book",
+    link: "/portfolio/wp-elearning"
+  }
+];
+
+const techFilters = ["All", "React", "WordPress", "AI", "Web App", "E-commerce", "Plugin"];
+---
+
+<PageLayout>
+  <Content
+    title="Portfolio"
+    subtitle="Showcase of my work"
+    items={projects}
+  />
+
+  <!-- Simple filter UI (static for now) -->
+  <div class="flex flex-wrap gap-2 my-6">
+    {techFilters.map((tech) => (
+      <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm cursor-pointer">{tech}</span>
+    ))}
+  </div>
+</PageLayout>

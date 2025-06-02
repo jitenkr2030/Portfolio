@@ -1,0 +1,25 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+const service = Astro.url.searchParams.get('service') || 'web-dev';
+const serviceMap = {
+  'web-dev': 'Web Development',
+  'ai': 'AI Integration',
+  'wp-plugin': 'WordPress Plugin',
+  'hosting': 'Hosting Setup'
+};
+---
+<PageLayout>
+  <section class="max-w-xl mx-auto py-16">
+    <h1 class="text-3xl font-bold mb-6">Payment</h1>
+    <div class="mb-4">
+      <strong>Service:</strong> {serviceMap[service] || 'Web Development'}
+    </div>
+    <!-- Stripe/Razorpay/PayPal button goes here -->
+    <form action="/api/pay" method="POST">
+      <input type="hidden" name="service" value={service} />
+      <label class="block mb-2">Coupon Code (optional):</label>
+      <input type="text" name="coupon" class="input mb-4" />
+      <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+  </section>
+</PageLayout>
