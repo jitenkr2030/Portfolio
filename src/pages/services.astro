@@ -7,7 +7,8 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services',
+  title: 'Services - Jitender Kumar',
+  description: 'Professional web development and AI integration services tailored to your business needs'
 };
 ---
 
@@ -16,38 +17,39 @@ const metadata = {
 
   <Hero
     tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
+    title="Professional Development Services"
+    subtitle="Expert web development and AI integration services to help your business grow and succeed in the digital world. From custom web applications to intelligent automation solutions."
+    actions={[{ variant: 'primary', text: 'Get Started', href: '/book-service' }]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
+      src: '~/assets/images/services-hero.jpg',
+      alt: 'Professional Development Services',
     }}
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
+    title="Core Services"
+    subtitle="Comprehensive development solutions tailored to your business needs"
     columns={3}
     items={[
       {
-        title: 'Educational',
+        title: 'Web Development',
         description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+          'Custom web applications built with modern frameworks like React, Next.js, and Node.js. Focusing on scalability, performance, and user experience.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Interior Design',
+        title: 'AI Integration',
         description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+          'Implement intelligent solutions using machine learning and AI technologies. From chatbots to data analysis and automation systems.',
+        icon: 'tabler:brain',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
+        title: 'Full Stack Development',
+        description:
+          'End-to-end development services covering both frontend and backend. Creating robust, secure, and efficient applications.',
+        icon: 'tabler:stack-2',
       },
       {
         title: 'E-commerce',
