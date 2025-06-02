@@ -1,12 +1,20 @@
 ---
+export async function getStaticPaths() {
+  const services = [
+    { slug: 'web-development', title: 'Web Development', description: 'Custom web development solutions', price: '$999', features: ['Responsive Design', 'SEO Optimization', 'Performance Tuning'] },
+    { slug: 'mobile-development', title: 'Mobile Development', description: 'Native and cross-platform mobile apps', price: '$1499', features: ['iOS & Android', 'User-friendly UI', 'Push Notifications'] },
+    { slug: 'cloud-consulting', title: 'Cloud Consulting', description: 'Expert cloud architecture and deployment', price: '$799', features: ['AWS/Azure/GCP', 'Scalability', 'Security'] }
+  ];
+
+  return services.map(service => ({
+    params: { service: service.slug },
+    props: { serviceData: service }
+  }));
+}
+
 import PageLayout from '~/layouts/PageLayout.astro';
 const { service } = Astro.params;
-const serviceData = {
-  title: service.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-  description: "Detailed description of the service.",
-  price: "$499",
-  features: ["Feature 1", "Feature 2", "Feature 3"]
-};
+const { serviceData } = Astro.props;
 ---
 <PageLayout>
   <section class="max-w-3xl mx-auto py-16">
