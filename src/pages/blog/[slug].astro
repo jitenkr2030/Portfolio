@@ -1,5 +1,13 @@
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'sample-post' } },
+    { params: { slug: 'another-post' } }
+  ];
+}
+
 const { slug } = Astro.params;
 const post = {
   title: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
