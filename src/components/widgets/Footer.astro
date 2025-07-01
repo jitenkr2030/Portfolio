@@ -23,18 +23,51 @@ export interface Props {
   theme?: string;
 }
 
-const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const { socialLinks = [
+  { ariaLabel: 'GitHub', href: 'https://github.com/yourusername', icon: 'tabler:brand-github' },
+  { ariaLabel: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: 'tabler:brand-linkedin' },
+  { ariaLabel: 'Twitter', href: 'https://twitter.com/yourusername', icon: 'tabler:brand-twitter' },
+], secondaryLinks = [
+  { text: 'Privacy Policy', href: '/privacy' },
+  { text: 'Terms', href: '/terms' },
+], links = [
+  {
+    title: 'Services',
+    links: [
+      { text: 'Web Development', href: '/services/web-development' },
+      { text: 'AI Solutions', href: '/services/ai-solutions' },
+      { text: 'Consulting', href: '/services/consulting' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { text: 'Portfolio', href: '/portfolio' },
+      { text: 'Case Studies', href: '/case-studies' },
+      { text: 'Blog', href: '/blog' },
+    ],
+  },
+  {
+    title: 'Contact',
+    links: [
+      { text: 'Get in Touch', href: '/contact' },
+      { text: 'Book a Call', href: '/book-service' },
+      { text: 'FAQ', href: '/faq' },
+    ],
+  },
+], footNote = '© 2024 Your Portfolio. All rights reserved.', theme = 'light' } = Astro.props;
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div
-    class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-  >
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+        </div>
+        <div class="text-sm text-muted mb-4">
+          Crafting innovative digital solutions with expertise in full-stack development, AI integration, and scalable web applications.
         </div>
         <div class="text-sm text-muted flex gap-1">
           {
@@ -74,7 +107,10 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         ))
       }
     </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+    <div class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-gray-200 dark:border-slate-800">
+      <div class="text-sm mr-4 dark:text-muted">
+        <Fragment set:html={footNote} />
+      </div>
       {
         socialLinks?.length ? (
           <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
@@ -84,6 +120,8 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
                   class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                   aria-label={ariaLabel}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {icon && <Icon name={icon} class="w-5 h-5" />}
                   <Fragment set:html={text} />
@@ -95,10 +133,6 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
           ''
         )
       }
-
-      <div class="text-sm mr-4 dark:text-muted">
-        <Fragment set:html={footNote} />
-      </div>
     </div>
   </div>
 </footer>
