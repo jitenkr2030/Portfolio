@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react'
 import { CalculatorStep, CalculatorField } from '@/types/calculator'
+import { BookingData, PaymentReceipt } from '@/types/booking'
 import { StepNavigation, StepHeader } from './StepNavigation'
 import { FormField } from './FormField'
 import { CostBreakdown } from './CostBreakdown'
 import { TimelineVisualizer } from './TimelineVisualizer'
+import { BookingForm } from '@/components/booking/BookingForm'
+import { PaymentForm } from '@/components/booking/PaymentForm'
+import { PaymentReceiptComponent } from '@/components/booking/PaymentReceipt'
 import { useCalculator, useStepNavigation } from '@/hooks/useCalculator'
 import { usePricingEngine } from '@/hooks/usePricingEngine'
 import { Button } from '@/components/ui/button'
@@ -21,7 +25,8 @@ import {
   Calculator,
   FileText,
   AlertCircle,
-  CheckCircle
+  CheckCircle,
+  CreditCard
 } from 'lucide-react'
 
 // Define calculator steps
@@ -211,6 +216,9 @@ export function CalculatorWizard() {
   const { currentStep: navStep } = useStepNavigation()
   const { pricing, timeline, isCalculating } = usePricingEngine(formData)
   const [isExporting, setIsExporting] = useState(false)
+  const [bookingFlow, setBookingFlow] = useState<'calculator' | 'booking' | 'payment' | 'receipt'>('calculator')
+  const [bookingData, setBookingData] = useState<Partial<BookingData>>({})
+  const [paymentReceipt, setPaymentReceipt] = useState<PaymentReceipt | null>(null)
 
   const currentStepData = CALCULATOR_STEPS[currentStep]
   const currentFields = STEP_FIELDS[currentStepData.id] || []
@@ -222,9 +230,47 @@ export function CalculatorWizard() {
     setIsExporting(false)
   }
 
+  const handleBookingSubmit = (data: Partial<BookingData>) => {
+    setBookingData(data)
+    setBookingFlow('payment')
+  }
+
+  const handlePaymentComplete = (paymentData: any) => {
+    setPaymentReceipt(paymentData)
+    setBookingFlow('receipt')
+  }
+
+  const handleBackToCalculator = () => {
+    setBookingFlow('calculator')
+  }
+
+  const handleBackToBooking = () => {
+    setBookingFlow('booking')
+  }
+
+  const handleDownloadReceipt = () => {
+    // Simulate download
+    console.log('Downloading receipt...')
+  }
+
+  const handleEmailReceipt = () => {
+    // Simulate email
+    console.log('Emailing receipt...')
+  }
+
+  const handleShareReceipt = () => {
+    // Simulate share
+    console.log('Sharing receipt...')
+  }
+
   const renderStepContent = () => {
     if (currentStep === 5) { // Results step
-      return <ResultsStep pricing={pricing} timeline={timeline} isCalculating={isCalculating} />
+      return <ResultsStep 
+        pricing={pricing} 
+        timeline={timeline} 
+        isCalculating={isCalculating}
+        onBookNow={() => setBookingFlow('booking')}
+      />
     }
 
     return (
@@ -232,6 +278,75 @@ export function CalculatorWizard() {
         {currentFields.map((field, index) => (
           <FormField key={index} field={field} />
         ))}
+      </div>
+    )
+  }
+
+  // Render booking flow components
+  if (bookingFlow === 'booking') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8">
+            <Button variant="outline" onClick={handleBackToCalculator} className="mb-4">
+              ← Back to Calculator
+            </Button>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Complete Your Booking
+            </h1>
+            <p className="text-lg text-gray-600">
+              Provide your information to secure your project estimate
+            </p>
+          </div>
+          <BookingForm
+            calculatorData={formData}
+            pricing={pricing}
+            timeline={timeline}
+            onSubmit={handleBookingSubmit}
+            onCancel={handleBackToCalculator}
+          />
+        </div>
+      </div>
+    )
+  }
+
+  if (bookingFlow === 'payment') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8">
+            <Button variant="outline" onClick={handleBackToBooking} className="mb-4">
+              ← Back to Booking
+            </Button>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Complete Payment
+            </h1>
+            <p className="text-lg text-gray-600">
+              Pay the deposit to confirm your booking
+            </p>
+          </div>
+          <PaymentForm
+            bookingData={bookingData}
+            onPaymentComplete={handlePaymentComplete}
+            onBack={handleBackToBooking}
+          />
+        </div>
+      </div>
+    )
+  }
+
+  if (bookingFlow === 'receipt' && paymentReceipt) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <PaymentReceiptComponent
+            receipt={paymentReceipt}
+            bookingData={bookingData}
+            onDownload={handleDownloadReceipt}
+            onEmail={handleEmailReceipt}
+            onShare={handleShareReceipt}
+          />
+        </div>
       </div>
     )
   }
@@ -311,9 +426,10 @@ interface ResultsStepProps {
   pricing: any
   timeline: any
   isCalculating: boolean
+  onBookNow: () => void
 }
 
-function ResultsStep({ pricing, timeline, isCalculating }: ResultsStepProps) {
+function ResultsStep({ pricing, timeline, isCalculating, onBookNow }: ResultsStepProps) {
   if (isCalculating) {
     return (
       <div className="text-center py-12">
@@ -404,10 +520,18 @@ function ResultsStep({ pricing, timeline, isCalculating }: ResultsStepProps) {
             Ready to Start Your Project?
           </h3>
           <p className="text-lg text-gray-600 mb-6">
-            Let's discuss your requirements and create a detailed proposal for your project.
+            Book now and secure your spot with a 30% deposit. Get started on your project immediately!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="flex items-center">
+            <Button 
+              size="lg" 
+              onClick={onBookNow}
+              className="flex items-center bg-blue-600 hover:bg-blue-700"
+            >
+              <CreditCard className="w-4 h-4 mr-2" />
+              Book Now & Pay Deposit
+            </Button>
+            <Button variant="outline" size="lg" className="flex items-center">
               <Mail className="w-4 h-4 mr-2" />
               Get Detailed Quote
             </Button>
@@ -415,6 +539,9 @@ function ResultsStep({ pricing, timeline, isCalculating }: ResultsStepProps) {
               <Phone className="w-4 h-4 mr-2" />
               Schedule a Call
             </Button>
+          </div>
+          <div className="mt-4 text-sm text-gray-500">
+            <p>🔒 Secure booking process • 💳 30% deposit to secure • 📧 Instant confirmation</p>
           </div>
         </CardContent>
       </Card>
