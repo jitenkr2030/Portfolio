@@ -1,0 +1,174 @@
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): server.ts src/**/*[39m
+[33m[nodemon] watching extensions: ts,tsx,js,jsx[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://0.0.0.0:3000
+> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 6.7s (993 modules)
+ GET / 200 in 7278ms
+ GET / 200 in 179ms
+ GET / 200 in 370ms
+ GET / 200 in 370ms
+ GET / 200 in 157ms
+ ⚠ Cross origin request detected from preview-chat-3ec9743b-e943-4d74-a10b-e7b7db4c4ac5.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 203ms
+ GET / 200 in 164ms
+ GET / 200 in 162ms
+ GET / 200 in 190ms
+ GET / 200 in 174ms
+ GET / 200 in 155ms
+ GET / 200 in 154ms
+ GET / 200 in 146ms
+ GET / 200 in 165ms
+ GET / 200 in 152ms
+ GET / 200 in 145ms
+ GET / 200 in 144ms
+ GET / 200 in 140ms
+ GET / 200 in 140ms
+ GET / 200 in 147ms
+ GET / 200 in 142ms
+ GET / 200 in 138ms
+ GET / 200 in 148ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+[32m[nodemon] restarting due to changes...[39m
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, scandir '/home/z/my-project/src/app'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: '/home/z/my-project/src/app'
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+ GET / 200 in 262ms
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/z/my-project/server.ts' imported from /home/z/my-project/
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:859:10)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///home/z/my-project/node_modules/tsx/dist/esm/index.mjs?1759922437530:2:3744)
+    at resolveDirectory (file:///home/z/my-project/node_modules/tsx/dist/esm/index.mjs?1759922437530:2:4243)
+    at resolveTsPaths (file:///home/z/my-project/node_modules/tsx/dist/esm/index.mjs?1759922437530:2:4984)
+    at resolve (file:///home/z/my-project/node_modules/tsx/dist/esm/index.mjs?1759922437530:2:5361)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at Hooks.resolve (node:internal/modules/esm/hooks:240:30) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///home/z/my-project/server.ts'
+}
+
+Node.js v22.19.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
