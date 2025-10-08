@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,21 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "JitenderKumar - Full-Stack Developer & UI/UX Designer",
+  description: "Professional portfolio of JitenderKumar, showcasing expertise in full-stack development, UI/UX design, and modern web technologies. Built with Next.js, TypeScript, and Tailwind CSS.",
+  keywords: ["JitenderKumar", "Full-Stack Developer", "UI/UX Designer", "Next.js", "TypeScript", "Tailwind CSS", "React", "Web Development"],
+  authors: [{ name: "JitenderKumar" }],
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "JitenderKumar - Full-Stack Developer & UI/UX Designer",
+    description: "Professional portfolio showcasing full-stack development and UI/UX design expertise",
+    url: "https://jitenderkumar.com",
+    siteName: "JitenderKumar",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "JitenderKumar - Full-Stack Developer & UI/UX Designer",
+    description: "Professional portfolio showcasing full-stack development and UI/UX design expertise",
   },
 };
 
@@ -42,7 +44,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <Navigation />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
         <Toaster />
       </body>
     </html>
